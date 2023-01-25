@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BEAMER FAMILY LAW</title>
+
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/clientlogin/clientlogin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></head>
+
+    </head>
+
+    <body>
+<div>
+    
+    <div class="headerbg">
+        <div class="header">
+        <div class="logo">
+            <a href="index.html"> <img src="/css/image/logo.png" alt=""> </a>
+            <div class="heading">THE BEAMER FAMILY LAW </div>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="AboutAttorney.html">About Attorney</a>
+            <a>Our Practices</a>
+            <a>Contact Us</a>
+        </div>
+        <div class="logInButton">
+            <a href="clienLogIn.html">Client Login</a>
+        </div>
+        </div>
+    </div>
+
+    <div class="clientLogIn">
+        <div class="image">
+            <img src="/clientlogin/images/loginimage.png" alt="">
+        </div>
+        <div class="form">
+            <div class="heading">
+               Log In
+            </div>
+            <div class="say">
+                Welcome Back<br/>
+                Please Enter Your Details
+            </div>
+            
+            
+            <label>Email</label><br/>
+            <input type="text" placeholder="siamoragra@gmail.com">
+            <br/>
+            <br/>
+            
+            <label> Password</label>
+            <div class="password-container">
+                <input type="password" placeholder="************" id="password">
+                <i class="fa-solid fa-eye" id="eye"></i>
+              </div>
+              
+
+              <script>
+                const passwordInput = document.querySelector("#password")
+                const eye = document.querySelector("#eye")
+                eye.addEventListener("click", function(){
+                this.classList.toggle("fa-eye-slash")
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+                passwordInput.setAttribute("type", type)
+                })
+              </script>
+            <br/>
+            <br/>
+            <!-- <div class="forgotPasswordText">I forgot my password</div> -->
+           
+            
+           
+                <br/>
+                <br/>
+              <input type="submit" value="SEND OTP" />
+
+              <div class="haveAnAccount">
+                <p>
+                    Already Have an account?
+                </p>
+                <p style="color: red;"><b>Log in</b></p>
+              </div>
+        </div>
+    </div>
+
+
+
+
+
+<footer>
+    <div class="footercover">
+     <div class="footerRow">
+         <div class="first">
+             <img class="img1" src="/footer/images/logofooter.png" alt=""><br/>
+             <div class="footerHeading">BEAMER FAMILY LAW</div><br/>
+             <div class="icon" >
+             <img src="/footer/images/facefooter.png" width="16rem" height="34rem" alt="">
+             <img style="padding-top:5rem" width="34.87rem" height="28.33rem" src="/footer/images/twitterfooter.png" alt="">
+             <img style="padding-top:5rem" width="24.63rem" height="24.83rem" src="/footer/images/plusfooter.png" alt="">
+         
+             <img  width="30.33rem" height="30.32rem" src="/footer/images/infooter.png" alt="">
+             
+             <img style="padding-top:6rem"  width="33.33rem" height="26.67rem" src="/footer/images/youtubefooter.png" alt="">
+             </div>
+         </div>
+         <div class="second">
+             <div class="footerHeading">Our Practices</div><br/><br/>
+                 <a>Child Custody</a>
+                 <a>Divorce</a>
+                 <a>Asset</a>
+                 <a>Mediations</a>
+         </div>
+         <div class="third">
+             <div class="footerHeading">FindUs</div>
+             <div class="rowContactFooter">
+                 <img width="23rem" height="33rem" src="/footer/images/addressfooter.png" alt="" />
+                 <p>Beamer Family Law<br/>
+                     1617 Park Place Avenue<br/>
+                     Suite 110B<br/>
+                     Fort Worth, TX 76110</p>
+             </div>
+             <div class="rowContactFooter">
+                 <img  width="32rem" height="26rem" src="footer/images/mailfooter.png" alt="">
+                 <p>+1 817-631-3126</p>
+             </div>
+             <div width="25rem" height="32rem" class="rowContactFooter">
+                 <img src="footer/images/callfooter.png" alt="">
+                 <p>stephanie@beamerfamilylaw.com</p>
+             </div>
+
+         </div>
+
+     </div>
+ </div>
+</footer>
+</div>
+    </body>
+</html>

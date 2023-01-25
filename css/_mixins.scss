@@ -1,0 +1,114 @@
+// fonctions réutilisable avec MIXINS
+
+// MIXINS nous permet de créer des fonctions réutilisables 
+
+// @mixin noflex{
+//       display: flex;
+//       flex-direction: row;
+//       align-items: center;
+//        justify-content: center;
+//       flex-wrap:nowrap;
+// }
+
+@mixin flex-row-centerAJ-nowrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap:nowrap;
+}
+
+@mixin flex-row-centerAJ-wrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+}
+
+@mixin flex-row-end {
+      display: flex;
+      flex-direction: row;
+      // align-items: center;
+       justify-content:flex-end;
+      flex-wrap: wrap;
+}
+
+@mixin flex-row-start {
+      display: flex;
+      flex-direction: row;
+      // align-items: center;
+      flex-wrap: wrap;
+}
+@mixin flex-row-space-between-nowrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+}
+
+@mixin flex-row-space-around-nowrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+}
+
+@mixin flex-row-space-evenly-nowrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+}
+
+
+@mixin flex-row-space-around-wrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+}
+@mixin flex-row-space-between-wrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap ;
+      justify-content: space-between;
+}
+
+@mixin flex-column-center {
+      display: flex;
+      flex-direction: column;
+       align-items: center;
+      justify-content: center;
+}
+
+@mixin flex-column-centerA {
+      display: flex;
+      flex-direction: column;
+      //  align-items: center;
+      // justify-content: center;
+}
+
+
+@mixin flex-column-start {
+      display: flex;
+      flex-direction: column;
+      //  align-items: center;
+      justify-content:flex-start;
+}
+@mixin flex-column-space-between {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+}
+
+
+
+@mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+}
+
