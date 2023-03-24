@@ -126,7 +126,9 @@ color: #000000;
 
         color: #FFFFFF;
       }
-
+      input[type="submit"]:hover{
+      text-shadow: 0px 3px 9px rgba(144, 255, 255, 0.7);
+      }
       .haveAnAccount{
         font-family: 'Segoe UI';
         font-style: italic;
@@ -135,6 +137,8 @@ color: #000000;
         line-height: 27px;
         /* identical to box height */
         display: flex;
+        flex-direction: row-reverse;
+
         flex-wrap: nowrap;
 
         color: #000000;
@@ -184,3 +188,21 @@ color: #FFFFFF;
        
     }
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+
+      

@@ -19,36 +19,104 @@
 <!-- stylesheet -->
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/testimonial.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
 
+// // let isMouseHover = false
+// // let test = document.getElementById("book");
+// // test.addEventListener("mouseover", function (event) {
+// //   isMouseHover = true
+ 
+// //   console.log(isMouseHover)
+// // });
+//     var o = 0;
+// function change() {
+//   var doc = document.getElementById("book");
+//   var color = ["#E91E63", "#0A0F96"];
+//   doc.style.backgroundColor = color[0];
+//   o = (o + 1) % color.length;
+// }
+// setInterval(change, 1000);
+</script>
+<script src="scrollOnClick.js" defer ></script>
 
+<script src="backend/checkUserLoggedIn.js"></script>
+<script src="backend/homepageAfterLogin.js" defer></script>
+<script src="backend/indexContact.js" defer ></script>
+
+<style> 
+
+    </style>
     </head>
 <body>
 
 <div class="blur">
-
+    <script>
+        autoRedirect ()  
+   </script>
         <div class="headerbg">
             <div class="header">
             <div class="logo">
-                <img src="/css/image/logo.png" alt="">
+                <a href="index.html"> <img src="/css/image/logo.png" alt=""> </a>
                 <div class="heading">THE BEAMER FAMILY LAW </div>
             </div>
             <div class="menu">
-                <a>Home</a>
-                <a>About Attorney</a>
-                <a>Our Practices</a>
-                <a>Contact Us</a>
+                <a href="index.html">Home</a>
+                <a href="AboutAttorney.html">About Attorney</a>
+                <a id="ourPracticesClick">Our Practices</a>
+                <a id="contactusClick">Contact Us</a>
             </div>
             <!-- <div class="logInButton">
                 <a>Client Login</a>
             </div> -->
+            <!-- <button class="btn">open</button>
+<ul class="list hidden">
+    <li class="item1">Item 1</li>
+    <li class="item2">Item 2</li>
+    <li class="item3">Item 3</li>
+</ul> -->
             <div class="userAvatar" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
                 
-                    <img src="/css/image/avatarUser.png" alt=""><i class="fa fa-caret-down" style="font-size:38px;color:#ffffff"></i>
+                    <!-- <img src="/css/image/avatarUser.png" alt=""> -->
+                   <div class="bgPro">
+                    <div id="profileAvatar"></div>
+                     </div>
+                    <div class="dropdown">
+                       <i class="fa fa-caret-down dropbtn" onclick="myFunction()" style="font-size:38px;color:#ffffff"></i>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a id="profileName"></a>
+                          <!-- <a>About</a> -->
+                          <a onclick="Logout()">LogOut</a>
+                          <a href="appointmentList.html">Your Appointments</a>
+                        </div>
+                      </div>
+                     
             </div>
+            <script>
+                /* When the user clicks on the button, 
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                  document.getElementById("myDropdown").classList.toggle("show");
+                }
+                
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                  if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                      var openDropdown = dropdowns[i];
+                      if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                      }
+                    }
+                  }
+                }
+                </script>
             </div>
         </div>
         <br/>
-        <div class="hero">
+        <div class="hero" >
             
            <div class="left">
                 <div class="heading">
@@ -66,68 +134,79 @@
                 <br/>
                 <br/>
                 <br/>
-                <a>
+                <a href="calender.html">
                     BOOK APPOINTMENT
                 </a>
            </div>
 
-           <div class="right">
+           <div class="right" >
                 <img src="/css/image/heroImage.png" alt="">
 
-                <div class="book" id="book">BOOK  Appointemnt</div>
+                <div class="book" id="book" style="margin-left: -7%;">BOOK  Appointemnt</div>
                 <script type="text/javascript">
                     document.getElementById("book").onclick = function () {
-                        location.href = "appointmentForm.html";
+                        location.href = "calender.html";
                     };
                 </script>
            </div>
         </div>
 
 
-        <div class="afterHero">
+
+        <div class="afterHero" id="afterHeroScroll">
             <div class="heading">
+               <div style="width: 10vw;">
+                
+               </div>
                 How we serve our Clients?
+                <div class="dottedDes">
+                    <img src="css/image/Dotted_des.png" alt=""  >
+                </div>
             </div>
-
+           
             <div class="row">
                 <div class="bg">
                     <h2>Child Custody</h2>
-                    <div class="image">
+                    <div class="image1">
                         <p>
                             At Beamer Family Law, we want to help people achieve success with whatever family law issue they may have in order to continue thriving as a family. Whether that be helping with a divorce where one or two people are unhappy getting custody for a child when it is in their best interest, or helping to get the funds necessary to continue to raise that child or children as best as possible.
                         </p>
                     </div>
                 </div>
                 <div class="bg">
-                    <h2>Child Custody</h2>
-                    <div class="image">
+                    <h2>Divorce</h2>
+                    <div class="image2">
                         <p>
                             At Beamer Family Law, we want to help people achieve success with whatever family law issue they may have in order to continue thriving as a family. Whether that be helping with a divorce where one or two people are unhappy getting custody for a child when it is in their best interest, or helping to get the funds necessary to continue to raise that child or children as best as possible.
                         </p>                    </div>
                 </div>
             </div>
-
+            
             <div class="row">
+                
                 <div class="bg">
-                    <h2>Child Custody</h2>
-                    <div class="image">
+                    <h2>Asset</h2>
+                    <div class="image3">
                         <p>
                             At Beamer Family Law, we want to help people achieve success with whatever family law issue they may have in order to continue thriving as a family. Whether that be helping with a divorce where one or two people are unhappy getting custody for a child when it is in their best interest, or helping to get the funds necessary to continue to raise that child or children as best as possible.
                         </p>
                     </div>
                 </div>
                 <div class="bg">
-                    <h2>Child Custody</h2>
-                    <div class="image">
+                    <h2>Mediation</h2>
+                    <div class="image4">
                         <p>
                             At Beamer Family Law, we want to help people achieve success with whatever family law issue they may have in order to continue thriving as a family. Whether that be helping with a divorce where one or two people are unhappy getting custody for a child when it is in their best interest, or helping to get the funds necessary to continue to raise that child or children as best as possible.
                         </p>                    </div>
                 </div>
             </div>
-
+           
         </div>
         
         <div class="about">
+            <div class="dottedDes2" >
+                <img src="css/image/Dotted_des.png" alt="" >
+            </div>
             <div class="aboutWidth">
             <div class="heading">
                 About Us
@@ -136,7 +215,7 @@
                 <div class="row">
                     <div class="image">
                         <img src="/css/image/Ab.png" alt="">
-                        <!-- <img src="/css/image/Dotteddesign.png" height="100rem" alt=""> -->
+                        <!-- <img src="/css/image/Dotteddesign.png" height="100px" alt=""> -->
                     </div>
                     <div class="column">
                         <p>
@@ -203,7 +282,7 @@
         <script src="/testimonialsscript.js"></script>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contactScroll">
         
         <div class="row">
         <div class="column">
@@ -214,20 +293,21 @@
             Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.
         </p>
 
-        
-        <input type="text" placeholder="Name" /><br/><br/>
-        <input type="email" placeholder="E-Mail" /><br/><br/>
-        <input id="phone" type="tel" name="phone" placeholder="PhoneNumber"/><br/><br/>
-        <input type="text" list="cars" placeholder="Select"/> <br/><br/>
-        <datalist id="cars" >
-          <option>Volvo</option>
-          <option>Saab</option>
-          <option>Mercedes</option>
-          <option>Audi</option>
-        </datalist>
-
-        <input type="text" placeholder="Write Your Message........" /><br/><br/>
-        <input type="submit" value="Send"/>
+        <form id="formContact">
+            <input type="text" placeholder="Name" name="name" required/><br/><br/>
+            <input type="email" placeholder="E-Mail" name="email" required/><br/><br/>
+            <input id="phone" type="tel" name="phone" placeholder="PhoneNumber" required/><br/><br/>
+            <input type="text" list="cars" placeholder="Select" name="select" required/> <br/><br/>
+            <datalist id="cars" required>
+              <option>Volvo</option>
+              <option>Saab</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+            </datalist>
+    
+            <input type="text" placeholder="Write Your Message........" name="message" required/><br/><br/>
+            <input type="submit" value="Send"/>
+        </form>
         </div>
         <div class="map">
             <iframe
@@ -280,13 +360,13 @@
                  <img class="img1" src="/footer/images/logofooter.png" alt=""><br/>
                  <div class="footerHeading">BEAMER FAMILY LAW</div><br/>
                  <div class="icon" >
-                 <img src="/footer/images/facefooter.png" width="16rem" height="34rem" alt="">
-                 <img style="padding-top:5rem" width="34.87rem" height="28.33rem" src="/footer/images/twitterfooter.png" alt="">
-                 <img style="padding-top:5rem" width="24.63rem" height="24.83rem" src="/footer/images/plusfooter.png" alt="">
+                 <img src="/footer/images/facefooter.png" width="16px" height="34px" alt="">
+                 <img style="padding-top:5px" width="34.87px" height="28.33px" src="/footer/images/twitterfooter.png" alt="">
+                 <img style="padding-top:5px" width="24.63px" height="24.83px" src="/footer/images/plusfooter.png" alt="">
              
-                 <img  width="30.33rem" height="30.32rem" src="/footer/images/infooter.png" alt="">
+                 <img  width="30.33px" height="30.32px" src="/footer/images/infooter.png" alt="">
                  
-                 <img style="padding-top:6rem"  width="33.33rem" height="26.67rem" src="/footer/images/youtubefooter.png" alt="">
+                 <img style="padding-top:6px"  width="33.33px" height="26.67px" src="/footer/images/youtubefooter.png" alt="">
                  </div>
              </div>
              <div class="second">
@@ -299,17 +379,17 @@
              <div class="third">
                  <div class="footerHeading">FindUs</div>
                  <div class="rowContactFooter">
-                     <img width="23rem" height="33rem" src="/footer/images/addressfooter.png" alt="" />
+                     <img width="23px" height="33px" src="/footer/images/addressfooter.png" alt="" />
                      <p>Beamer Family Law<br/>
                          1617 Park Place Avenue<br/>
                          Suite 110B<br/>
                          Fort Worth, TX 76110</p>
                  </div>
                  <div class="rowContactFooter">
-                     <img  width="32rem" height="26rem" src="footer/images/mailfooter.png" alt="">
+                     <img  width="32px" height="26px" src="footer/images/mailfooter.png" alt="">
                      <p>+1 817-631-3126</p>
                  </div>
-                 <div width="25rem" height="32rem" class="rowContactFooter">
+                 <div width="25px" height="32px" class="rowContactFooter">
                      <img src="footer/images/callfooter.png" alt="">
                      <p>stephanie@beamerfamilylaw.com</p>
                  </div>
@@ -321,8 +401,44 @@
  </footer>
 </div>
 
+<script>
+    let isBlink = true
+    // document.getElementById("book").style.marginRight="10%";
+
+    console.log("isBlink",isBlink)
+    function change() {
+        if(isBlink==true)
+        {
+  var doc = document.getElementById("book");
+ 
+  var color = ["#E91E63", "#0A0F96"];
+  doc.style.backgroundColor = color[i];
+  i = (i + 1) % color.length;
+  document.getElementById("book").style.color =  "#FFFFFF";
+        }
+}
 
 
+setInterval(change, 1000);
+
+ 
+    document.getElementById("book").addEventListener("mouseover", function() {
+    isBlink=false
+    console.log("isBlink",isBlink)
+    document.getElementById("book").style.background = "#FFFFFF";
+    document.getElementById("book").style.color =  "#E91E63";
+});
+
+document.getElementById("book").addEventListener("mouseleave", function() {
+   
+    isBlink=true
+
+});
+
+
+
+
+</script>
 
 
 

@@ -185,6 +185,10 @@ footer {
   transition-property: background;
   transition-duration: 1s;
 }
+.afterLogInmargin{
+  margin-right: 7%;
+}
+
 .hero .right {
   width: 687px;
   height: 592px;
@@ -210,6 +214,7 @@ footer {
   color: #FFFFFF;
   background: #E91E63;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
 }
 
 .afterHero {
@@ -730,6 +735,8 @@ footer {
   .footercover .footerRow .third .rowContactFooter p {
     font-size: 12px;
   }
+
+  
 }
 @media screen and (max-width: 1024px) {
   .headerbg .header .logo .heading {

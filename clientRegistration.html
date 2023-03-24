@@ -5,8 +5,12 @@
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="clientlogin/clientlogin.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- stylesheet -->
+              <script src="backend/localStorage.js" defer> </script> 
+              <script src="backend/loginbackend.js" defer> </script> 
+              <script src="scrollOnClick.js" defer></script>
+
 
     </head>
 
@@ -16,14 +20,14 @@
     <div class="headerbg">
         <div class="header">
         <div class="logo">
-            <a href="index.html"> <img src="/css/image/logo.png" alt=""> </a>
+            <a href="index.html"> <img src="css/image/logo.png" alt=""> </a>
             <div class="heading">THE BEAMER FAMILY LAW </div>
         </div>
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="AboutAttorney.html">About Attorney</a>
-            <a>Our Practices</a>
-            <a>Contact Us</a>
+            <a  onclick="aboutPracticeScroll()">Our Practices</a>
+            <a onclick="contactPracticeScroll()">Contact Us</a>
         </div>
         <div class="logInButton">
             <a href="clienLogIn.html">Client Login</a>
@@ -31,40 +35,42 @@
         </div>
     </div>
 
-    <div class="clientLogIn">
+ {   <div class="clientLogIn" id="one">
         <div class="image">
-            <img src="/clientlogin/images/loginimage.png" alt="">
+            <img src="clientlogin/images/loginimage.png" alt="">
         </div>
         <div class="form">
             <div class="heading">
                 New Client Registration
-            </div><br/>
+            </div>
             <div class="say">
                 Please Enter Your Details
-            </div><br/>
-            <form class="#mainForm">
+            </div>
+            <form target="_blank" class="#mainForm" id="formData">
             <div class="inputRow">
                 <div class="small">
                     <label>First Name</label><br/>
-                    <input type="text" placeholder="First Name" class="firstName">
+                    <p id="warningField1" style="display: none;">Required</p>
+                    <input type="text" placeholder="First Name" class="firstName" id="firstName" name="firstName" required>
                 </div>
                 <div class="small">
                     <label>Last Name</label><br/>
-                    <input type="text" placeholder="Last Name" class="lastName">
+                    <p id="warningField2" style="display: none;">Required</p>
+                    <input type="text" placeholder="Last Name" class="lastName" id="lastName" name="lastName" required>
                 </div>
-            </div><br/>
+            </div>
             <label>Phone No.</label><br/>
-            <input type="text" placeholder="+91-XXX-XXXX-XXX" id="phone">
-            <br/>
-            <br/>
+            <p id="warningField3" style="display: none;">Required</p>
+            <input type="number" placeholder="+91-XXX-XXXX-XXX" id="phone" name="phone" required>
+
             <label>Email</label><br/>
-            <input type="text" placeholder="siamoragra@gmail.com" id="email">
-            <br/>
-            <br/>
-            
+            <p id="warningField4" style="display: none;">Required</p>
+            <input type="email" placeholder="siamoragra@gmail.com" id="email" name="email" required>
+           
             <label>Create Password</label>
+            <p id="warningField5" style="display: none;">Required</p>
             <div class="password-container">
-                <input type="password" placeholder="************" id="password" class="passcode1">
+                <input type="password" placeholder="************" id="password" class="passcode1" name="password" required>
                 <i class="fa-solid fa-eye" id="eye"></i>
               </div>
               
@@ -84,8 +90,9 @@
            
             
             <label>Re-enter Password</label>
+            <p id="warningField6" style="display: none;">Required</p>
             <div class="password-container">
-                <input type="password" placeholder="************" id="passwordre">
+                <input type="password" placeholder="************" id="passwordre" required>
                 <i class="fa-solid fa-eye" id="eyere"></i>
               </div>
               
@@ -99,24 +106,85 @@
                 passwordInputre.setAttribute("type", typere)
                 })
               </script>
-                <br/>
-                <br/>
-              <input type="submit" value="SEND OTP" onclick="store(event)"  />
-              <!-- <a href="clientRegistration.html">SEND OTP </a> -->
-              <div class="haveAnAccount">
+               
+              <input type="submit" value="SEND OTP"  onclick="store(event)" style="height:40px" />
+              <!-- <a href="clientRegistration.html" onclick="store(event)">SEND OTP </a> -->
+              <div class="haveAnAccount" style="display: flex; flex-direction: row;">
                 <p>
-                    Already Have an account?
+                    &nbsp;&nbsp;Already Have an account?
                 </p>
                 <a href="clienLogIn.html" style="text-decoration:none"> <p style="color: red;"><b> &nbsp;&nbsp;Log in </b></p></a>
               </div>
             </form>
 
-            <script src="/localStorage.js" >
-                // event.preventDefault();
-                // var inputEmail= document.getElementById("email");
-            // localStorage.setItem("email", inputEmail.value);
             
-            </script>
+        </div>
+    </div>
+}
+    
+    <div class="clientLogIn"  id="two">
+        <div class="image">
+            <img src="/clientlogin/images/otbVer.png" alt="">
+        </div>
+        <div class="form" style="min-width: 400px;">
+            <div class="heading">
+                OTP Verification
+            </div>
+            <br/>
+            <div class="say">
+                We will send you a one time password on<br/>
+                your registered email
+            </div>
+            <br/><br/><p style="font-size: 10px;color:red;display: none;" id="otpError">Please insert the latest received OTP</p><br/><br/>
+            <form id="getOTP">
+            <div style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;" >
+            <input type="number" style="max-width: 50px; font-size: 30px; text-align: center;" id="val1"  maxlength="1"/>
+            <input type="number" style="max-width: 50px; font-size: 30px; text-align: center;" id="val2"  maxlength="1"/>
+            <input type="number" style="max-width: 50px; font-size: 30px; text-align: center;" id="val3"  maxlength="1"/>
+            <input type="number" style="max-width: 50px; font-size: 30px; text-align: center;" id="val4"  maxlength="1"/>
+            </div>
+           
+              <div class="haveAnAccount" >
+                <p >
+                  <span style="color:#9d9d9d">Didn't receive an OTP?</span>
+               <br/>
+               
+               <!-- <span style="color:#1f2888">Resend OTP in 0.29sec</span> -->
+               <span style="color:#1f2888;" onMouseOver="this.style.cursor='pointer'" onclick="callOtp()">Resend OTP </span>
+               <script>
+                function callOtp()
+                {
+                    var id = localStorage.getItem("otpid")
+                    otpResend(id)
+                }
+                   
+
+               </script>
+                  </p>
+                <!-- <p style="color: red;"><b>Log in</b></p> -->
+              </div>
+                           <!-- <script>
+                const passwordInput = document.querySelector("#password")
+                const eye = document.querySelector("#eye")
+                eye.addEventListener("click", function(){
+                this.classList.toggle("fa-eye-slash")
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+                passwordInput.setAttribute("type", type)
+                })
+              </script> -->
+            <br/>
+            <br/>
+            <!-- <div class="forgotPasswordText">I forgot my password</div> -->
+           
+            
+            <!-- <input type="submit" value="SEND OTP"  onclick="otp(event)" /> -->
+              <input  type="submit" value="VERIFY" style="height: 40px;" onclick="otp(event)"/>
+            </form>
+              <br/>
+              <br/>
+              <!-- <div class="new">
+              <a href="clientRegistration.html"> NEW CLIENT </a>
+            </div> -->
         </div>
     </div>
 
@@ -131,13 +199,13 @@
              <img class="img1" src="/footer/images/logofooter.png" alt=""><br/>
              <div class="footerHeading">BEAMER FAMILY LAW</div><br/>
              <div class="icon" >
-             <img src="/footer/images/facefooter.png" width="16rem" height="34rem" alt="">
-             <img style="padding-top:5rem" width="34.87rem" height="28.33rem" src="/footer/images/twitterfooter.png" alt="">
-             <img style="padding-top:5rem" width="24.63rem" height="24.83rem" src="/footer/images/plusfooter.png" alt="">
+             <img src="/footer/images/facefooter.png" width="16px" height="34px" alt="">
+             <img style="padding-top:5px" width="34.87px" height="28.33px" src="/footer/images/twitterfooter.png" alt="">
+             <img style="padding-top:5px" width="24.63px" height="24.83px" src="/footer/images/plusfooter.png" alt="">
          
-             <img  width="30.33rem" height="30.32rem" src="/footer/images/infooter.png" alt="">
+             <img  width="30.33px" height="30.32px" src="/footer/images/infooter.png" alt="">
              
-             <img style="padding-top:6rem"  width="33.33rem" height="26.67rem" src="/footer/images/youtubefooter.png" alt="">
+             <img style="padding-top:6px"  width="33.33px" height="26.67px" src="/footer/images/youtubefooter.png" alt="">
              </div>
          </div>
          <div class="second">
@@ -150,17 +218,17 @@
          <div class="third">
              <div class="footerHeading">FindUs</div>
              <div class="rowContactFooter">
-                 <img width="23rem" height="33rem" src="/footer/images/addressfooter.png" alt="" />
+                 <img width="23px" height="33px" src="/footer/images/addressfooter.png" alt="" />
                  <p>Beamer Family Law<br/>
                      1617 Park Place Avenue<br/>
                      Suite 110B<br/>
                      Fort Worth, TX 76110</p>
              </div>
              <div class="rowContactFooter">
-                 <img  width="32rem" height="26rem" src="footer/images/mailfooter.png" alt="">
+                 <img  width="32px" height="26px" src="footer/images/mailfooter.png" alt="">
                  <p>+1 817-631-3126</p>
              </div>
-             <div width="25rem" height="32rem" class="rowContactFooter">
+             <div width="25px" height="32px" class="rowContactFooter">
                  <img src="footer/images/callfooter.png" alt="">
                  <p>stephanie@beamerfamilylaw.com</p>
              </div>

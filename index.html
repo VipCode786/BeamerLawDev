@@ -10,6 +10,8 @@
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <!-- opensans font -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -17,13 +19,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- stylesheet -->
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/testimonial.css">
-
-
+<script src="backend/checkUserLoggedIn.js"></script>
+<script src="scrollOnClick.js" defer ></script>
+<script src="backend/indexContact.js" defer></script>
+<style>
+a{
+    text-decoration: none;
+}
+</style>
     </head>
 <body>
     
 <div>
-
+   <script>
+        autoRedirect ()  
+   </script>
         <div class="headerbg">
             <div class="header">
             <div class="logo">
@@ -33,8 +43,8 @@
             <div class="menu">
                 <a href="index.html">Home</a>
                 <a href="AboutAttorney.html">About Attorney</a>
-                <a>Our Practices</a>
-                <a>Contact Us</a>
+                <a id="ourPracticesClick">Our Practices</a>
+                <a id="contactusClick">Contact Us</a>
             </div>
             <div class="logInButton">
                 <a href="clienLogIn.html">Client Login</a>
@@ -60,7 +70,7 @@
                 <br/>
                 <br/>
                 <br/>
-                <a>
+                <a onclick="checkUserLogIn()">
                     BOOK APPOINTMENT
                 </a>
            </div>
@@ -75,7 +85,7 @@
         </div>
         
 
-        <div class="afterHero">
+        <div class="afterHero" id="afterHeroScroll">
             <div class="heading">
                <div style="width: 10vw;">
                 
@@ -136,14 +146,14 @@
             
                 <div class="row">
                     <div class="image">
-                        <img src="/css/image/Ab.png" alt="">
+                        <img src="/css/image/AboutHomeMamImg.png" alt="">
                         <!-- <img src="/css/image/Dotteddesign.png" height="100px" alt=""> -->
                     </div>
                     <div class="column">
                         <p>
                             At Beamer Family Law, we want to help people achieve success with whatever family law issue they may have in order to continue thriving as a family. Whether that be helping with a divorce where one or two people are unhappy getting custody for a child when it is in their best interest, or helping to get the funds necessary to continue to raise that child or children as best as possible.
                         </p>
-                        <a>See Attorney Profile</a>
+                        <a href="AboutAttorney.html">See Attorney Profile</a>
                       
                     </div>
                 </div>
@@ -206,7 +216,7 @@
         <script src="/testimonialsscript.js"></script>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contactScroll">
         
         <div class="row">
         <div class="column">
@@ -217,20 +227,21 @@
             Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.
         </p>
 
-        
-        <input type="text" placeholder="Name" /><br/><br/>
-        <input type="email" placeholder="E-Mail" /><br/><br/>
-        <input id="phone" type="tel" name="phone" placeholder="PhoneNumber"/><br/><br/>
-        <input type="text" list="cars" placeholder="Select"/> <br/><br/>
-        <datalist id="cars" >
+        <form id="formContact">
+        <input type="text" placeholder="Name" name="name" required/><br/><br/>
+        <input type="email" placeholder="E-Mail" name="email" required/><br/><br/>
+        <input id="phone" type="tel" name="phone" placeholder="PhoneNumber" required/><br/><br/>
+        <input type="text" list="cars" placeholder="Select" name="select" required/> <br/><br/>
+        <datalist id="cars" required>
           <option>Volvo</option>
           <option>Saab</option>
           <option>Mercedes</option>
           <option>Audi</option>
         </datalist>
 
-        <input type="text" placeholder="Write Your Message........" /><br/><br/>
+        <input type="text" placeholder="Write Your Message........" name="message" required/><br/><br/>
         <input type="submit" value="Send"/>
+    </form>
         </div>
         <div class="map">
             <iframe

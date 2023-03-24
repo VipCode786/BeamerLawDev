@@ -16,7 +16,7 @@
   color: #FFFFFF;
 }
 .aboutAttorney .image {
-  width: 411px;
+  width: 366px;
   height: 362px;
 }
 .aboutAttorney .image img {
@@ -35,8 +35,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 100rem;
-  margin-bottom: 100rem;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .aboutAttorneyExperience .education .heading {
   font-family: "Open Sans";
@@ -44,7 +44,7 @@
   font-weight: 300;
   font-size: 48px;
   line-height: 65px;
-  margin-left: -490rem;
+  margin-left: -490px;
   color: #000000;
 }
 .aboutAttorneyExperience .education .bold {
@@ -79,8 +79,8 @@
   font-size: 48px;
   line-height: 65px;
   color: #000000;
-  margin-left: 100rem;
-  margin-right: 50rem;
+  margin-left: 100px;
+  margin-right: 50px;
 }
 .aboutAttorneyExperience .professionalExperience .row {
   display: flex;
@@ -93,7 +93,7 @@
 .aboutAttorneyExperience .professionalExperience .row .column {
   width: 272px;
   height: 272px;
-  margin: 30rem;
+  margin: 30px;
   background: #FFFFFF;
   box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
@@ -133,16 +133,16 @@
   color: #343434;
 }
 
-@media screen and (max-width: 850rem) {
+@media screen and (max-width: 850px) {
   .aboutAttorneyExperience .education {
-    margin-left: 0rem;
+    margin-left: 0px;
   }
 }
 @media screen and (max-width: 1400px) {
   .aboutAttorneyExperience .education {
-    margin-left: 0rem;
+    margin-left: 0px;
   }
   .aboutAttorneyExperience .education .heading {
-    margin-left: 0rem;
+    margin-left: 0px;
   }
 }/*# sourceMappingURL=about.css.map */

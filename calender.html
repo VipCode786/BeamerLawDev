@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Beamer Law</title>
+    <link rel="stylesheet" href="calenderStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="calenderScript.js" defer></script>
+    <script src="backend/checkUserLoggedIn.js"></script>
+    <script src="backend/calender.js" ></script>
+  </head>
+  <body>
+    <script>
+      autoRedirect () 
+      
+ </script>
+ <!-- <script>
+getData() 
+</script> -->
+    <form>
+   <div class="column">
+    <div class="scheduling">Scheduling Appointment</div>
+    <div style="font-size: 30px;margin-left: 90%; margin-top: -10%; color: #ffffff;" id="close" onMouseOver="this.style.cursor='pointer'">✖</div>
+    <script type="text/javascript">
+      document.getElementById("close").onclick = function () {
+          location.href = "homePageAfterLogin.html";
+      };
+  </script>
+  <br/>
+
+  <br/>
+    <div class="wrapper">
+
+      <header>
+        <div class="icons">
+          <span id="prev" class="material-symbols-rounded">chevron_left</span>
+        </div>
+        <p class="current-date"></p>
+        <div class="icons">
+          <span id="next" class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </header>
+      <div class="calendar">
+        <ul class="weeks">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="days"></ul>
+      </div>
+    </div>
+
+    <div class="button-row">
+    <div class="button">
+      <input type="radio" id="a25" value="10:00:00-11:00:00" name="check-substitution-2" required/>
+      <label class="btn btn-default" for="a25" id="l25">10am-11am</label>
+  </div>
+
+  <div class="button">
+      <input type="radio" id="a26" value="11:00:00-12:00:00" name="check-substitution-2" />
+      <label class="btn btn-default" for="a26" id="l26">11am-12am</label>
+  </div>
+
+  <div class="button">
+      <input type="radio" id="a27" value="12:00:00-01:00:00" name="check-substitution-2" />
+      <label class="btn btn-default" for="a27" id="l27">12pm-1pm</label>
+  </div>
+
+  
+  <div class="button">
+      <input type="radio" id="a28" value="01:00:00-02:00:00" name="check-substitution-2" />
+      <label class="btn btn-default" for="a28" id="l28">1pm-2pm</label>
+  </div>
+</div>
+
+  <input type="text" placeholder="Subject" class="width" id="subject" required>
+  <input type="text" placeholder="Write Your Message" class="width" id="message" required >
+  <div style="display: flex; flex-direction: row;  margin-left: 10px;" >
+      <div  class="fileButton"  onclick="document.getElementById('getFile').click()"><i class="fa fa-paperclip"></i> Attach File</div>
+      <input type='file' id="getFile" style="display:none" multiple="multiple">
+      <p style="font-size: 15px; color: #ffffff;" id="filee"></p>
+
+  </div>
+  <button class="submit">Submit</button>
+</div>
+</form>
+
+ 
+    <script>
+
+     
+    </script>
+  </body>
+</html>

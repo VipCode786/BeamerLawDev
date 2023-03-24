@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="/clientlogin/clientlogin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- stylesheet -->
-
+        <script src="backend/loginbackend.js" defer></script>
+        <script src="scrollOnClick.js" defer></script>
     </head>
 
     </head>
@@ -24,8 +25,8 @@
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="AboutAttorney.html">About Attorney</a>
-            <a>Our Practices</a>
-            <a>Contact Us</a>
+            <a  onclick="aboutPracticeScroll()">Our Practices</a>
+            <a onclick="contactPracticeScroll()">Contact Us</a>
         </div>
         <div class="logInButton">
             <a href="clienLogIn.html">Client Login</a>
@@ -37,29 +38,29 @@
         <div class="image">
             <img src="/clientlogin/images/loginimage.png" alt="">
         </div>
-        <div class="form" style="min-width: 400rem;">
+        <div class="form" style="min-width: 400px;">
             <div class="heading">
                 Log In 
             </div>
-            <br/>
             <div class="say">
                 Welcome Back<br/>
                 Please Enter Your Details
             </div>
-            <br/><br/><br/><br/>
+            
+            <br/><br/><p style="color:red;font-size: 10px;display: none;" id="loginError">Please Enter Valid Email or Password</p><br/><br/>
+            <form id="formLogin">
             <label>Email</label><br/>
-            <input type="text" placeholder="siamoragra@gmail.com" >
-            <br/>
-            <br/>
-            <br/>
+            <input type="text" placeholder="siamoragra@gmail.com"  name="email">
+            
             <label> Password</label><br/>
             <div class="password-container">
-                <input type="password" placeholder="************" id="password">
+                <input type="password" placeholder="************" id="password" name="password">
                 <i class="fa-solid fa-eye" id="eye"></i>
               </div>
               <div class="haveAnAccount" style="margin-left:auto">
-                <p >
+                <p ><a href="forgotPassword1.html">
                    I forgot my password
+                </a>
                 </p>
                 <!-- <p style="color: red;"><b>Log in</b></p> -->
               </div>
@@ -79,9 +80,11 @@
            
             
             
-              <input type="submit" value="LOG IN" style="height: 40px;"/>
-              <br/>
-              <br/>
+              <input type="submit" value="LOG IN" style="height: 40px;" id="loginButton"/>
+             
+            </form>
+              
+              
               <div class="new">
               <a href="clientRegistration.html"> NEW CLIENT </a>
             </div>
@@ -99,13 +102,13 @@
              <img class="img1" src="/footer/images/logofooter.png" alt=""><br/>
              <div class="footerHeading">BEAMER FAMILY LAW</div><br/>
              <div class="icon" >
-             <img src="/footer/images/facefooter.png" width="16rem" height="34rem" alt="">
-             <img style="padding-top:5rem" width="34.87rem" height="28.33rem" src="/footer/images/twitterfooter.png" alt="">
-             <img style="padding-top:5rem" width="24.63rem" height="24.83rem" src="/footer/images/plusfooter.png" alt="">
+             <img src="/footer/images/facefooter.png" width="16px" height="34px" alt="">
+             <img style="padding-top:5px" width="34.87px" height="28.33px" src="/footer/images/twitterfooter.png" alt="">
+             <img style="padding-top:5px" width="24.63px" height="24.83px" src="/footer/images/plusfooter.png" alt="">
          
-             <img  width="30.33rem" height="30.32rem" src="/footer/images/infooter.png" alt="">
+             <img  width="30.33px" height="30.32px" src="/footer/images/infooter.png" alt="">
              
-             <img style="padding-top:6rem"  width="33.33rem" height="26.67rem" src="/footer/images/youtubefooter.png" alt="">
+             <img style="padding-top:6px"  width="33.33px" height="26.67px" src="/footer/images/youtubefooter.png" alt="">
              </div>
          </div>
          <div class="second">
@@ -118,17 +121,17 @@
          <div class="third">
              <div class="footerHeading">FindUs</div>
              <div class="rowContactFooter">
-                 <img width="23rem" height="33rem" src="/footer/images/addressfooter.png" alt="" />
+                 <img width="23px" height="33px" src="/footer/images/addressfooter.png" alt="" />
                  <p>Beamer Family Law<br/>
                      1617 Park Place Avenue<br/>
                      Suite 110B<br/>
                      Fort Worth, TX 76110</p>
              </div>
              <div class="rowContactFooter">
-                 <img  width="32rem" height="26rem" src="footer/images/mailfooter.png" alt="">
+                 <img  width="32px" height="26px" src="footer/images/mailfooter.png" alt="">
                  <p>+1 817-631-3126</p>
              </div>
-             <div width="25rem" height="32rem" class="rowContactFooter">
+             <div width="25px" height="32px" class="rowContactFooter">
                  <img src="footer/images/callfooter.png" alt="">
                  <p>stephanie@beamerfamilylaw.com</p>
              </div>
