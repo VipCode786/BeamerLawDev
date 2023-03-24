@@ -20,7 +20,7 @@
  async function getData(){
  const token =localStorage.getItem("token")
  console.log("appointment token")
- await fetch("http://localhost:5000/api/booking/", {
+ await fetch("https://beamerlaw.onrender.com/api/booking/", {
     method: "GET",
      mode:"cors",
     headers: {

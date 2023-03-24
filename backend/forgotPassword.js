@@ -26,7 +26,7 @@ async function sendForgotOTP(event) {
        
 	let email = document.getElementById("email")
 	
-	await fetch(`http://localhost:5000/api/users/otpforgot?email=${email.value}`, {
+	await fetch(`https://beamerlaw.onrender.com/api/users/otpforgot?email=${email.value}`, {
 		method: "POST",
 		 mode:"cors",
 		headers: {
@@ -69,7 +69,7 @@ async function resetPassword(event) {
         let bodyPassword = password.value
 		const token =localStorage.getItem("token")
         await getParameters();
-	    await fetch(`http://localhost:5000/api/users/verify?id=${query[0]}&token=${query[1]}&password=${bodyPassword}`, {
+	    await fetch(`https://beamerlaw.onrender.com/api/users/verify?id=${query[0]}&token=${query[1]}&password=${bodyPassword}`, {
 		method: "POST",
 		 mode:"cors",
 		headers: {
